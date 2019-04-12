@@ -5,7 +5,7 @@ app.set('view engine', 'pug')
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    res.render('index', { message: 'Hello World!' })
+    res.render('index', { title: 'My Contacts', message: 'Hello World!' })
 })
 
 const server = app.listen(process.env.PORT, () => {
