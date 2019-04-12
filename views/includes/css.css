@@ -1,0 +1,8 @@
+body, html {
+    font-family: 'Roboto', sans-serif !important;
+    height: 100%;
+}
+
+div.navbar-bg, footer#footer, button.contact-btn {
+    background: #101b27;
+}
