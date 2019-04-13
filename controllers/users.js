@@ -1,9 +1,13 @@
 var express = require('express')
 var firebase = require("firebase")
-const config = require('../credential')
 
 var router = express.Router()
-firebase.initializeApp(config)
+firebase.initializeApp({
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.PROJECT_ID,
+    databaseURL: process.env.DATABASE_NAME,
+    storageBucket: process.env.BUCKET,
+})
 const auth = firebase.auth()
 
 router.get('/', (req, res) => {
