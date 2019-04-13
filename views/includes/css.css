@@ -3,6 +3,6 @@ body, html {
     height: 100%;
 }
 
-div.navbar-bg, footer#footer, button.contact-btn {
-    background: #101b27;
+ul.nav {
+    background: #5673a0;
 }

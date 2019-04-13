@@ -7,7 +7,7 @@ firebase.initializeApp(config)
 const auth = firebase.auth()
 
 router.get('/', (req, res) => {
-    res.render('login', { section: 'My Contact'})
+    res.render('login', { section: 'Login'})
 })
 
 router.post('/login', (req, res) => {

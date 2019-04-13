@@ -2,7 +2,11 @@ doctype html
 html
   include includes/header
   body.bg-light
-    .container
-        .row
-            .col-12
+    if section != 'Login'
+      ul.nav.justify-content-end.py-2
+        li.nav-item
+          a.nav-link.text-white(href="/auth/logout") Logout
+    .container.pt-3.bg-white.h-100
+        .row.h-100
+            .col-12.p-5
                 block content
