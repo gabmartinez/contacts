@@ -1,13 +1,12 @@
 const express = require('express')
 var users = require('./controllers/users')
+var contacts = require('./controllers/contacts')
 
 const app = express()
 app.set('view engine', 'pug')
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', (req, res) => {
-    res.render('index', { title: 'My Contacts', message: 'Hello World!' })
-})
+app.use('/', contacts)
 app.use('/auth', users)
 
 const server = app.listen(process.env.PORT, () => {
