@@ -1,1 +1,31 @@
 extend layout
+block content
+    .row
+        .col-6
+            h2 #{section}
+        .col-6.text-right
+            a.btn.btn-sm.btn-success(href="/create", role="button") Add Contact
+    .table-responsive.mt-2
+        table.table.table-sm.table-hover
+            thead.thead-light
+                tr
+                th(scope="col") #
+                th(scope="col") FirstName
+                th(scope="col") LastName
+                th(scope="col") Mobile
+                th(scope="col") Email
+                th(scope="col") Update
+                th(scope="col") Delete
+            tbody
+                each contact in contacts
+                    tr
+                        th(scope="row") 1
+                        td #{contact.FirstName}
+                        td #{contact.LastName}
+                        td #{contact.Mobile}
+                        td #{contact.Email}
+                        td
+                            a.btn.btn-sm.btn-warning(href="/update/" + contact.id, role="button") Update
+                        td
+                            form(method="POST", action="/delete/" + contact.id)
+                                button.btn.btn-sm.btn-danger(type="submit") Delete
