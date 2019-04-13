@@ -1,0 +1,22 @@
+extend layout
+block content
+    h2 #{section}
+    .row
+        .col-6
+            - var btn_txt = (contact.id ? 'Update Contact' : 'Save Contact')
+            form(method="POST", action="/update")
+                input(type="hidden", name="id", value=contact.id)
+                .form-group
+                    label(for="FirstNameInput") First name
+                    input#FirstNameInput.form-control(type="text", name="FirstName", placeholder="Joe", value=contact.FirstName)
+                .form-group
+                    label(for="LastNameInput") Last name
+                    input#LastNameInput.form-control(type="text", name="LastName", placeholder="Santana", value=contact.LastName)
+                .form-group
+                    label(for="EmailInput") Email
+                    input#EmailInput.form-control(type="email", name="Email", placeholder="test@test.com", value=contact.Email)
+                .form-group
+                    label(for="MobileInput") Mobile
+                    input#MobileInput.form-control(type="tel", name="Mobile", placeholder="809-999-9999", value=contact.Mobile)
+                a.btn.btn-secondary.mr-3(href="/", role="button") Back
+                button.btn.btn-primary(type="submit") #{btn_txt}
